@@ -1,0 +1,240 @@
+﻿@model KinoOpolwood.Models.SearchViewModel
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result of search</h2>
+
+
+@if (Model.Bilets.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilets.First().Miejsce.MiejsceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilets.First().Seans.SeansId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bilets.First().Price)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Bilets)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miejsce.MiejsceId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seans.SeansId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.Films.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Films.First().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Films.First().LenghtTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Films.First().Director)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Films)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LenghtTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.Klients.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Klients.First().FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klients.First().LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klients.First().Adress)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Klients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.Miejsces.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Miejsces.First().Sala.SalaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miejsces.First().SeatNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miejsces.First().RowNumber)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Miejsces)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sala.SalaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RowNumber)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@*@if (Model.Rezerwacjas.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezerwacjas.First().Klient.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezerwacjas.First().Miejsce.MiejsceId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rezerwacjas.First().Seans.SeansId)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Rezerwacjas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Klient.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Miejsce.MiejsceId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seans.SeansId)
+                </td>
+            </tr>
+        }
+
+    </table>
+}*@
+
+@if (Model.Salas.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Salas.First().RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salas.First().NumberOfSeats)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Salas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfSeats)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.Seanss.Any())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seanss.First().Film.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seanss.First().Sala.SalaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seanss.First().StartDate)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Seanss)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Film.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sala.SalaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+
+
+
+
+
+

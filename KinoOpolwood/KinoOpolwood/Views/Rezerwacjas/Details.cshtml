@@ -1,0 +1,42 @@
+﻿@model KinoOpolwood.Models.Rezerwacja
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rezerwacja</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Klient.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klient.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Miejsce.MiejsceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Miejsce.MiejsceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seans.SeansId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seans.SeansId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RezerwacjaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

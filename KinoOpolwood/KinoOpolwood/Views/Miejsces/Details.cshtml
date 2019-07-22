@@ -1,0 +1,42 @@
+﻿@model KinoOpolwood.Models.Miejsce
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Miejsce</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sala.SalaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sala.SalaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RowNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MiejsceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
